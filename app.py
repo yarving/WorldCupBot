@@ -11,7 +11,7 @@ to_zone = tz.gettz('Asia/Shanghai')
 
 @app.route('/', methods=['POST'])
 def receive_sms():
-    body = requests.values.get('Body', None)
+    body = request.values.get('Body', None)
     resp = MessagingResponse()
     resp.message(body or 'Hello World!')
     return str(resp)
