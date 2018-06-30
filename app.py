@@ -64,7 +64,7 @@ def receive_sms():
         output = ""
         for group in html:
             output += "\n\n--- Group " + group['letter'] + " ---\n"
-            for team in group['group']['ordered_teams']:
+            for team in group['ordered_teams']:
                 output += team['country'] + " Pts: " + str(team['points']) + "\n"
 
     elif body == 'list':
