@@ -63,9 +63,9 @@ def receive_sms():
         html = requests.get(urls['group']).json()
         output = ""
         for group in html:
-            output += "\n\n--- Group " + group['group']['letter'] + " ---\n"
-            for team in group['group']['teams']:
-                output += team['team']['country'] + " Pts: " + str(team['team']['points']) + "\n"
+            output += "\n\n--- Group " + group['letter'] + " ---\n"
+            for team in group['group']['ordered_teams']:
+                output += team['country'] + " Pts: " + str(team['points']) + "\n"
 
     elif body == 'list':
         output = '\n'.join(countries)
